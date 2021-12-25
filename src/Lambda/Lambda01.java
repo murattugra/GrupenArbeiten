@@ -3,6 +3,7 @@ package Lambda;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Lambda01 {
 
@@ -28,6 +29,18 @@ public class Lambda01 {
 		list.stream().filter(t->t%2==1 && t<20).forEach(Lambda01::printEl);
 		System.out.println();
 		list.stream().map(t->Math.sqrt(t)).forEach(Lambda01::printEl);
+		
+		// List in en buyuk elemanini yazdiriniz
+		System.out.println();
+		Optional<Integer> maxEl =list.stream().reduce(Math::max);
+		System.out.println(maxEl);
+		
+		//Functional Programming ile list elemanlarinin  tek olanalrinin
+	    // kuplerinin bir fazlasini ayni satirda aralarina bosluk birakarak yazdiriniz
+		
+		list.stream().filter(t->t%2!=0).map(t->(t*t*t)+1).forEach(t->System.out.println(t));
+										
+		
 		
 	}
 	
